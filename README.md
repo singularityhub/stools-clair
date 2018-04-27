@@ -3,6 +3,15 @@
 This repository shows a simple example of how to use the [stools](https://www.github.com/singularityhub/stools)
 (Singularity Tools) container to run [Clair OS](https://github.com/coreos/clair) security checks on your container.
 
+## Instructions
+
+ 1. Add the [.travis.yml](.travis.yml) file to your Github repository with one or more [Singularity](Singularity) recipes
+ 2. Ensure your recipe location(s) are specified correctly (see below) depending on if you want to build or pull.
+ 3. Connect your repository to Travis ([instructions](https://docs.travis-ci.com/user/getting-started/)), and optionally set up a cron job for continuous vulnerability testing.
+
+
+That's it!
+
 ## Travis CI
 
 [![Build Status](https://travis-ci.org/singularityhub/stools-clair.svg?branch=master)](https://travis-ci.org/singularityhub/stools-clair)
