@@ -1,0 +1,18 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+script:
+  - docker-compose up -d clair-db
+  - docker-compose up -d clair-scanner
+  - sleep 3
+
+  # Perform the build from your Singularity file, we are at the base of the repo
+  - docker exec -it clair-scanner singularity build container.simg Singularity
+
+  # Run sclair in the container to perform the scan
+  - docker exec -it clair-scanner sclair container.simg
+
